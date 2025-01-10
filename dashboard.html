@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WealthifyAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>WealthifyAI Dashboard</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="goals.html">GOALS</a>
+            <a href="stocks.html">STOCK MARKET</a>
+            <a href="settings.html">SETTINGS</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="income-expense">
+            <h2>Income & Expense Tracker</h2>
+            <button>Connect UPI</button>
+            <form>
+                <label for="income">Income:</label>
+                <input type="number" id="income" placeholder="Enter income manually">
+                <label for="expense">Expense:</label>
+                <input type="number" id="expense" placeholder="Enter expense manually">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="expense-categories">
+            <h2>Expense Categories</h2>
+            <ul>
+                <li>Groceries: $200</li>
+                <li>Food: $150</li>
+                <li>Medicines: $50</li>
+                <li>Travel: $100</li>
+            </ul>
+        </section>
+
+        <section class="spending-summary">
+            <h2>Spending Summary</h2>
+            <div id="chart-container">Pie chart here</div>
+        </section>
+    </main> 
+
+    <footer>
+        <p>WealthifyAI &copy; 2025</p>
+    </footer>
+</body>
+</html>

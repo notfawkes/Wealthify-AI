@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals - WealthifyAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+    <header>
+        <h1>WealthifyAI Goals</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="stocks.html">STOCK MARKET</a>
+            <a href="settings.html">SETTINGS</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="goal-setup">
+            <h2>Set Your Goal</h2>
+            <form>
+                <label for="goal-name">Goal Name:</label>
+                <input type="text" id="goal-name" placeholder="e.g., Buy a Car">
+                <label for="goal-amount">Target Amount:</label>
+                <input type="number" id="goal-amount" placeholder="e.g., 10000">
+                <label for="current-savings">Current Savings:</label>
+                <input type="number" id="current-savings" placeholder="e.g., 2000">
+                <button type="submit">Save Goal</button>
+            </form>
+        </section>
+
+        <section class="goal-progress">
+            <h2>Goal Progress</h2>
+            <div class="goal">
+                <p>Goal: Buy a Car</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 20%;"></div>
+                </div>
+                <p>20% completed</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>WealthifyAI &copy; 2025</p>
+    </footer>
+</body>
+</html>

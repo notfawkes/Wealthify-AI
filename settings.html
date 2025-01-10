@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <header>
+        <h1>Settings</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="goals.html">GOALS</a>
+            <a href="stocks.html">STOCK MARKET</a>
+        </nav>
+    </header>
+    <main>
+    <div class="settings-container">
+      
+        <section class="setting-section">
+            <h2>Notifications</h2>
+            <div class="setting-item">
+                <label for="emailNotifications">Email Notifications</label>
+                <input type=checkbox id="emailNotifications">
+            </div>
+            <div class="setting-item">
+                <label for="pushNotifications">Push Notifications</label>
+                <input type=checkbox id="pushNotifications">
+            </div>
+        </section>
+
+        <section class="setting-section">
+            <h2>UPI Integration</h2>
+             <div class="setting-item">
+                <label for="upiEnabled">Enable UPI</label>
+                <input type=checkbox id="upiEnabled">
+            </div>
+        </section>
+         <section class="setting-section">
+            <h2>User Preferences</h2>
+             <div class="setting-item">
+                 <label for="themeSelect">Theme</label>
+                 <select id="themeSelect">
+                     <option value="light">Light</option>
+                     <option value="dark">Dark</option>
+                 </select>
+            </div>
+             <div class="setting-item">
+                <label for="languageSelect">Language</label>
+                 <select id="languageSelect">
+                     <option value="english">English</option>
+                     <option value="spanish">Spanish</option>
+                     <option value="french">French</option>
+                     <option value="hindi">Hindi</option>
+                 </select>
+            </div>
+        </section>
+
+
+        <div class="button-container">
+            <button id="saveButton">Save Changes</button>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>© 2024 My App. All rights reserved.</p>
+    </footer>
+    <script src="settings-script.js"></script>
+</body>
+</html>

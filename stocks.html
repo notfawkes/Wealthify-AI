@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analysis</title>
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Background.jpg') no-repeat center center fixed; /* Add your image here */
+    background-size: cover;
+    position: relative;
+    color: #333;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 51, 1), rgba(0, 0, 255, 0.1));
+    z-index: -1; /* Keep the gradient behind the content */
+}
+
+
+/* Header */
+.main-header {
+    background: linear-gradient(45deg, #001b36, #073563);
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main-header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.main-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: #ffcc00;
+}
+
+/* Market Trends Section */
+.market-trends {
+    padding: 2rem 1rem;
+    background: #e9f5ff;
+    border-bottom: 1px solid #ddd;
+}
+
+.market-trends h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #004080;
+}
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stock-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stock-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.stock-card p {
+    margin: 0.5rem 0;
+}
+
+.stock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Suggestions Section */
+.ai-suggestions {
+    padding: 2rem 1rem;
+    background: #fff;
+}
+
+.ai-suggestions h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #0066cc;
+}
+
+.suggestion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.suggestion-card {
+    background: rgba(240, 240, 240, 0.95);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suggestion-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.suggestion-card p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.suggestion-card .cta-button {
+    display: inline-block;
+    background: #004080;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.suggestion-card .cta-button:hover {
+    background: #0066cc;
+    transform: scale(1.05);
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.main-footer {
+    background: #004080;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>Stock Market Analysis</h1>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="dashboard.html">DASHBOARD</a>
+                <a href="stocks.html">STOCK MARKET</a>
+                <a href="settings.html">SETTINGS</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="market-trends">
+            <div class="container">
+                <h2>Real-Time Market Trends</h2>
+                <div class="stock-grid">
+                    <div class="stock-card" id="stock-card-1">
+                        <h3>AAPL</h3>
+                        <p>Current Price: <span class="stock-price" id="stock-price-1">175.00</span></p>
+                        <p>Change: <span class="stock-change" id="stock-change-1">+0.50</span></p>
+                    </div>
+                    <div class="stock-card" id="stock-card-2">
+                        <h3>GOOG</h3>
+                         <p>Current Price: <span class="stock-price" id="stock-price-2">2700.00</span></p>
+                        <p>Change: <span class="stock-change" id="stock-change-2">-10.00</span></p>
+                    </div>
+                    <div class="stock-card" id="stock-card-3">
+                        <h3>MSFT</h3>
+                         <p>Current Price: <span class="stock-price" id="stock-price-3">450.00</span></p>
+                        <p>Change: <span class="stock-change" id="stock-change-3">+1.50</span></p>
+                    </div>
+                    <div class="stock-card" id="stock-card-4">
+                        <h3>AMZN</h3>
+                        <p>Current Price: <span class="stock-price" id="stock-price-4">150.00</span></p>
+                        <p>Change: <span class="stock-change" id="stock-change-4">+0.25</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-suggestions">
+            <div class="container">
+                <h2>AI-Based Investment Suggestions</h2>
+                <div class="suggestion-grid">
+                    <div class="suggestion-card">
+                        <h3>Recommendation 1</h3>
+                        <p>Consider buying shares of [Stock Ticker]. Our AI indicates a high growth potential.</p>
+                         <a href="#" class="cta-button">View Analysis</a>
+                    </div>
+                    <div class="suggestion-card">
+                        <h3>Recommendation 2</h3>
+                       <p>Look at investing in [Stock Ticker], as our AI model detects a good market.</p>
+                        <a href="#" class="cta-button">View Analysis</a>
+                    </div>
+                     <div class="suggestion-card">
+                        <h3>Recommendation 3</h3>
+                        <p>It is advised to sell shares of [Stock Ticker], as there might be a fall.</p>
+                         <a href="#" class="cta-button">View Analysis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+      <footer class="main-footer">
+          <div class="container">
+              <p>© 2024 Stock Analysis. All rights reserved.</p>
+          </div>
+      </footer>
+    <script src="stock-market.js"></script>
+</body>
+</html>
