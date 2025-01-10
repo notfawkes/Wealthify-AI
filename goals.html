@@ -42,13 +42,48 @@
                 <div class="progress-bar">
                     <div class="progress" style="width: 20%;"></div>
                 </div>
-                <p>20% completed</p>
+                
             </div>
         </section>
-    </main>
+    </main> 
+
+
 
     <footer>
         <p>WealthifyAI &copy; 2025</p>
     </footer>
+    <script>
+        // Get the form and input elements
+        const goalForm = document.querySelector("form");
+        const goalAmountInput = document.getElementById("goal-amount");
+        const currentSavingsInput = document.getElementById("current-savings");
+        const progressBar = document.querySelector(".progress");
+        const progressText = document.querySelector(".goal-progress p");
+    
+        // Function to update the progress bar
+        function updateProgressBar() {
+            const targetAmount = parseFloat(goalAmountInput.value);
+            const currentSavings = parseFloat(currentSavingsInput.value);
+    
+            // Validate input values
+            if (!isNaN(targetAmount) && !isNaN(currentSavings) && targetAmount > 0) {
+                const progress = (currentSavings / targetAmount) * 100;
+    
+                // Limit progress to 100% max
+                const progressPercentage = Math.min(progress, 100);
+    
+                // Update the progress bar width and text
+                progressBar.style.width = progressPercentage + "%";
+                progressText.textContent = `${progressPercentage.toFixed(0)}% completed`;
+            }
+        }
+    
+        // Event listener to update progress when the user inputs values
+        goalForm.addEventListener("input", updateProgressBar);
+    
+        // Initial call to set the progress on page load (if inputs are pre-filled)
+        updateProgressBar();
+    </script>
+    
 </body>
 </html>
